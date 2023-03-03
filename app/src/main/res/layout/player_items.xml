@@ -1,112 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:background="@drawable/card_shape"
-    android:layout_margin="10dp">
+    android:layout_margin="10dp"
+    android:background="@drawable/card_shape">
 
     <ImageView
-
-        android:id="@+id/playerphoto"
+        android:id="@+id/playerPhoto"
         android:layout_width="100dp"
         android:layout_height="180dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp">
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/leftToLabelsBarrier"
+        app:layout_constraintTop_toTopOf="parent">
 
     </ImageView>
-    <LinearLayout
+
+
+    <TextView
+        android:id="@+id/Name"
+        style="@style/LabelStyle"
+        android:text="@string/name"
+        app:layout_constraintStart_toEndOf="@+id/leftToLabelsBarrier"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Value"
+        style="@style/LabelStyle"
+        android:text="@string/value"
+        app:layout_constraintStart_toEndOf="@+id/leftToLabelsBarrier"
+        app:layout_constraintTop_toBottomOf="@id/Name" />
+
+    <TextView
+        android:id="@+id/position"
+        style="@style/LabelStyle"
+        android:text="@string/position"
+        app:layout_constraintBottom_toTopOf="@id/clubBarrier"
+        app:layout_constraintStart_toEndOf="@+id/leftToLabelsBarrier"
+        app:layout_constraintTop_toBottomOf="@id/Value">
+
+    </TextView>
+
+
+    <ImageView
+        android:id="@+id/clubLogo"
+        style="@style/PlayerLogoStyle"
+        app:layout_constraintBottom_toTopOf="@id/clubBarrierBottom"
+        app:layout_constraintEnd_toStartOf="@id/club"
+        app:layout_constraintStart_toEndOf="@+id/leftToLabelsBarrier"
+        app:layout_constraintTop_toBottomOf="@id/position">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/club"
+        style="@style/LabelStyle"
+        android:layout_width="wrap_content"
+        android:text="@string/club"
+        app:layout_constraintBaseline_toBaselineOf="@id/clubLogo"
+        app:layout_constraintBottom_toTopOf="@id/clubBarrierBottom"
+        app:layout_constraintStart_toEndOf="@+id/clubLogo"
+        app:layout_constraintTop_toBottomOf="@id/position" />
+
+
+    <ImageView
+        android:id="@+id/nationLogo"
+        style="@style/PlayerLogoStyle"
+        app:layout_constraintBottom_toBottomOf="@id/nationBarrier"
+        app:layout_constraintStart_toEndOf="@+id/leftToLabelsBarrier"
+        app:layout_constraintTop_toBottomOf="@id/clubBarrierBottom">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/nation"
+        style="@style/LabelStyle"
+        android:text="@string/nation"
+        app:layout_constraintBaseline_toBaselineOf="@id/nationLogo"
+        app:layout_constraintStart_toEndOf="@+id/nationLogo"
+        app:layout_constraintTop_toBottomOf="@id/clubBarrierBottom" />
+
+    <TextView
+        android:id="@+id/age"
+        style="@style/LabelStyle"
+        android:text="@string/age"
+        app:layout_constraintStart_toEndOf="@id/leftToLabelsBarrier"
+        app:layout_constraintTop_toBottomOf="@id/nationBarrier" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/clubBarrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp">
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="clubLogo,club"
+        tools:layout_editor_absoluteY="190dp" />
 
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/clubBarrierBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="clubLogo,club"
+        tools:layout_editor_absoluteY="190dp" />
 
-        <TextView
-            android:id="@+id/Name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:text="Name"
-            android:textColor="@color/white"
-            android:textSize="21sp" />
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/nationBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="nation,nationLogo" />
 
-        <TextView
-            android:id="@+id/Value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:fontFamily="sans-serif-black"
-            android:text="Value"
-            android:textColor="@color/white"
-            android:textSize="21sp" />
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/leftToLabelsBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="playerPhoto"
+        tools:layout_editor_absoluteX="392dp" />
 
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:fontFamily="sans-serif-black"
-            android:text="Position"
-            android:textColor="@color/white"
-            android:textSize="21sp"></TextView>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/clublogo"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="#000066"
-                android:layout_marginRight="2dp">
-
-            </ImageView>
-
-            <TextView
-                android:id="@+id/club"
-                android:layout_width="146dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:text="Club"
-                android:textColor="@color/white"
-                android:textSize="21sp" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/nationlogo"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="#000066"
-                android:layout_marginRight="2dp">
-
-            </ImageView>
-
-            <TextView
-                android:id="@+id/nation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:text="Nation"
-                android:textColor="@color/white"
-                android:textSize="21sp" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/age"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:text="Age"
-            android:textColor="@color/white"
-            android:textSize="21sp" />
-    </LinearLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

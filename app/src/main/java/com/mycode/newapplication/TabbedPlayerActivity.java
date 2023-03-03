@@ -33,7 +33,7 @@ public class TabbedPlayerActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(getApplicationContext(),HomeActivity.class);
+                Intent i=new Intent(getApplicationContext(),HomeStart1.class);
                 startActivity(i);
                 Toast.makeText(TabbedPlayerActivity.this, "You have logged out successfully", Toast.LENGTH_SHORT).show();
             }

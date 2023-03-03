@@ -6,57 +6,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeStart1"
-    android:background="@color/indigo"
     android:orientation="vertical">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:text="Welcome to"
-        android:textSize="30dp"
-        android:textColor="@color/white">
+        android:text="@string/welcome_header"
+        android:textSize="30sp"
+        android:textColor="@color/secondaryColor">
     </TextView>
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:background="@drawable/transfermarket_icon">
+        android:src="@drawable/new_logo">
     </ImageView>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Transfer Market"
-        android:textSize="40sp"
-        android:layout_gravity="center"
-        android:textColor="@color/purple_700"
-        android:textStyle="bold">
+        android:id="@+id/appName"
+        style="@style/AppNameHeader">
     </TextView>
 
-    <Button
-        android:id="@+id/signin"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:text="SIGN IN"
-        android:textColor="@color/white"
-        android:textSize="21dp"
-        android:background="@drawable/football"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signIn"
+        style="@style/FootballButtonStyle"
+        android:text="@string/sign_in"
         android:layout_marginTop="40sp">
-    </Button>
+    </androidx.appcompat.widget.AppCompatButton>
 
     <Button
-        android:id="@+id/signup"
+        android:id="@+id/signUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textAllCaps="false"
-        android:text="Sign Up"
-        android:textColor="@color/purple_500"
+        android:text="@string/sign_up"
+        android:textColor="@color/green"
         android:textSize="21dp"
-        android:backgroundTint="@color/indigo">
+        android:backgroundTint="@color/mainColor">
     </Button>
 
 </LinearLayout>

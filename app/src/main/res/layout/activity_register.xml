@@ -1,125 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register"
-    android:orientation="vertical"
-    android:background="@color/indigo">
-    <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Sign Up"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:textColor="@color/white">
-        </TextView>
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/transfermarket_icon">
-        </ImageView>
-    </LinearLayout>
-
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:hint="Enter your name"
-        android:textColorHint="@color/indigo"
-        android:background="@drawable/input_shape"
-        android:drawableStart="@drawable/ic_name"
-        android:drawablePadding="5sp"
-        android:drawableTint="@color/indigo"
-        android:layout_margin="20sp">
-    </EditText>
-    <EditText
-        android:id="@+id/mail"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:hint="Enter your e-mail"
-        android:textColorHint="@color/indigo"
-        android:background="@drawable/input_shape"
-        android:drawableStart="@android:drawable/ic_dialog_email"
-        android:drawablePadding="5sp"
-        android:drawableTint="@color/indigo"
-        android:layout_margin="20sp">
-    </EditText>
-    <EditText
-        android:id="@+id/password"
-        android:inputType="textPassword"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:hint="Enter your password"
-        android:textColorHint="@color/indigo"
-        android:background="@drawable/input_shape"
-        android:drawableStart="@android:drawable/ic_lock_idle_lock"
-        android:drawablePadding="5sp"
-        android:drawableTint="@color/indigo"
-        android:layout_margin="20sp">
-    </EditText>
-    <EditText
-        android:id="@+id/confirmpass"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:hint="Confirm your password"
-        android:textColorHint="@color/indigo"
-        android:background="@drawable/input_shape"
-        android:drawableStart="@android:drawable/ic_lock_idle_lock"
-        android:drawablePadding="5sp"
-        android:drawableTint="@color/indigo"
-        android:layout_margin="20sp">
-    </EditText>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:paddingLeft="30dp">
-    <Button
-        android:id="@+id/signup"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:text="SIGN UP"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="21dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/football">
-    </Button>
-        <Button
-            android:id="@+id/back"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:text="Back"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="21dp"
-            android:background="@drawable/football">
-        </Button>
-    </LinearLayout>
+    tools:context=".Register">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Already have an account? Sign In"
-        android:textColor="@color/purple_500"
-        android:textSize="21dp">
+        android:id="@+id/signUpTitle"
+        style="@style/SignStyle"
+        android:text="@string/sign_up"
+        app:layout_constraintBottom_toTopOf="@id/top_barrier"
+        app:layout_constraintEnd_toStartOf="@id/app_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </TextView>
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/app_logo"
+        style="@style/AppLogoStyle"
+        android:contentDescription="@string/the_application_logo"
+        app:layout_constraintBottom_toTopOf="@id/top_barrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/signUpTitle"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+    <EditText
+        android:id="@+id/name"
+        style="@style/EditTextStyle"
+        android:drawableStart="@drawable/ic_name"
+        android:hint="@string/enter_your_name"
+        android:inputType="textPersonName"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintBottom_toTopOf="@+id/mail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_barrier"
+        app:layout_constraintVertical_chainStyle="packed">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/mail"
+        style="@style/EditTextStyle"
+        android:drawableStart="@android:drawable/ic_dialog_email"
+        android:hint="@string/enter_your_e_mail"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/password"
+        style="@style/EditTextStyle"
+        android:drawableStart="@android:drawable/ic_lock_idle_lock"
+        android:hint="@string/enter_your_password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/confirmPass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mail">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/confirmPass"
+        style="@style/EditTextStyle"
+        android:drawableStart="@android:drawable/ic_lock_idle_lock"
+        android:hint="@string/confirm_your_password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/register_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password">
+
+    </EditText>
+
+
+    <Button
+        android:id="@+id/register_btn"
+        style="@style/FootballButtonStyle"
+        android:layout_marginEnd="15dp"
+        android:text="@string/sign_up"
+        app:layout_constraintBottom_toTopOf="@id/footer_barrier"
+        app:layout_constraintEnd_toStartOf="@id/back_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttons_barrier">
+
+    </Button>
+
+    <Button
+        android:id="@+id/back_btn"
+        style="@style/FootballButtonStyle"
+        android:text="@string/back"
+        app:layout_constraintBottom_toTopOf="@id/footer_barrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/register_btn"
+        app:layout_constraintTop_toBottomOf="@id/buttons_barrier">
+
+    </Button>
+
+    <TextView
+        android:id="@+id/footer1"
+        style="@style/Footer1Style"
+        android:text="@string/already_have_an_account"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/footer2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/footer_barrier">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/footer2"
+        style="@style/Footer2Style"
+        android:text="@string/sign_in"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/footer1"
+        app:layout_constraintTop_toBottomOf="@id/footer_barrier"
+        android:layout_marginTop="40dp">
+
+    </TextView>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/top_barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="signUpTitle,app_logo"
+        tools:layout_editor_absoluteY="731dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/buttons_barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="back_btn,register_btn"
+        tools:layout_editor_absoluteY="731dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/footer_barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="footer1,footer2"
+        tools:layout_editor_absoluteY="731dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

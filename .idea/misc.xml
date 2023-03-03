@@ -4,13 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/NewApplication/app/src/main/res/drawable/card_shape.xml" value="0.199" />
+        <entry key="..\:/NewApplication/app/src/main/res/drawable/edit_text_shape.xml" value="0.1615" />
+        <entry key="..\:/NewApplication/app/src/main/res/drawable/football_btn.xml" value="0.131" />
         <entry key="..\:/NewApplication/app/src/main/res/drawable/ic_name.xml" value="0.199" />
         <entry key="..\:/NewApplication/app/src/main/res/drawable/input_shape.xml" value="0.199" />
         <entry key="..\:/NewApplication/app/src/main/res/layout/activity_home.xml" value="0.15942028985507245" />
         <entry key="..\:/NewApplication/app/src/main/res/layout/activity_home_start1.xml" value="0.15942028985507245" />
         <entry key="..\:/NewApplication/app/src/main/res/layout/activity_login.xml" value="0.15942028985507245" />
         <entry key="..\:/NewApplication/app/src/main/res/layout/activity_main.xml" value="0.2028985507246377" />
-        <entry key="..\:/NewApplication/app/src/main/res/layout/activity_register.xml" value="0.15942028985507245" />
+        <entry key="..\:/NewApplication/app/src/main/res/layout/activity_register.xml" value="0.176" />
         <entry key="..\:/NewApplication/app/src/main/res/layout/activity_start_menu.xml" value="0.15942028985507245" />
         <entry key="..\:/NewApplication/app/src/main/res/layout/activity_tab2.xml" value="0.15942028985507245" />
         <entry key="..\:/NewApplication/app/src/main/res/layout/activity_tabbed_player.xml" value="0.15942028985507245" />

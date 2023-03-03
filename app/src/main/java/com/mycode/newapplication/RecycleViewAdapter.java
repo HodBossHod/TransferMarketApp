@@ -15,10 +15,10 @@ import java.util.List;
 public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.MyViewHolder> {
 
 
-    List<TransferMarket> transferlist;
+    List<TransferMarket> transferList;
     OnPlayerListener mOnPlayerListener;
-    public RecycleViewAdapter(List<TransferMarket> transferlist,OnPlayerListener onPlayerListener) {
-        this.transferlist = transferlist;
+    public RecycleViewAdapter(List<TransferMarket> transferList,OnPlayerListener onPlayerListener) {
+        this.transferList = transferList;
         this.mOnPlayerListener=onPlayerListener;
     }
 
@@ -32,7 +32,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
     @Override
     public void onBindViewHolder(MyViewHolder viewHolder,int position) {
-        TransferMarket transferMarket=transferlist.get(position);
+        TransferMarket transferMarket=transferList.get(position);
         viewHolder.player_photo.setImageResource(transferMarket.getPhoto());
         viewHolder.name.setText(transferMarket.getName());
         viewHolder.value.setText(transferMarket.getValue());
@@ -46,7 +46,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
     @Override
     public int getItemCount() {
-        return transferlist.size();
+        return transferList.size();
     }
 
 
@@ -65,13 +65,13 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
             super(view);
             name=view.findViewById(R.id.Name);
             value=view.findViewById(R.id.Value);
-            position=view.findViewById(R.id.description);
-            player_photo=view.findViewById(R.id.playerphoto);
+            position=view.findViewById(R.id.position);
+            player_photo=view.findViewById(R.id.playerPhoto);
             club=view.findViewById(R.id.club);
             nation=view.findViewById(R.id.nation);
             age=view.findViewById(R.id.age);
-            c_logo=view.findViewById(R.id.clublogo);
-            n_logo=view.findViewById(R.id.nationlogo);
+            c_logo=view.findViewById(R.id.clubLogo);
+            n_logo=view.findViewById(R.id.nationLogo);
             this.OnPlayerListener=OnPlayerListener;
             view.setOnClickListener(this);
         }

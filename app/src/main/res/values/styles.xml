@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppLogoStyle">
+        <item name="android:layout_height">200dp</item>
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:src">@drawable/new_logo_xml</item>
+        <item name="android:tint">@color/secondaryColor</item>
+        <item name="backgroundTint">@color/green</item>
+    </style>
+
+    <style name="FootballButtonStyle">
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginStart">30dp</item>
+        <item name="android:layout_marginEnd">30dp</item>
+        <item name="android:textColor">@color/secondaryColor</item>
+        <item name="android:textSize">21sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/football</item>
+        <item name="backgroundTint">@color/green</item>
+    </style>
+
+    <style name="SignStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginStart">30dp</item>
+        <item name="android:layout_marginEnd">30dp</item>
+        <item name="android:textColor">@color/secondaryColor</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PlayerLogoStyle">
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_width">30dp</item>
+    </style>
+    <style name="LabelStyle">
+        <item name="android:layout_height"> wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/secondaryColor</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+    <style name="Footer1Style">
+        <item name="android:layout_height"> wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/green</item>
+        <item name="android:textSize">21sp</item>
+    </style>
+
+    <style name="Footer2Style">
+        <item name="android:layout_height"> wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/secondaryColor</item>
+        <item name="android:textSize">21sp</item>
+    </style>
+    <style name="AppNameHeader">
+        <item name="android:layout_height"> wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:text">@string/app_name</item>
+        <item name="android:textColor">@color/green</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="EditTextStyle">
+          <item name="android:layout_margin">@dimen/editTextMargin</item>
+          <item name="android:layout_height">40dp</item>
+          <item name="android:layout_width">match_parent</item>
+          <item name="drawableTint">@color/green</item>
+          <item name="android:drawablePadding">5dp</item>
+          <item name="android:padding">10dp</item>
+          <item name="android:background">@drawable/input_shape</item>
+          <item name="android:textColor">@color/secondaryColor</item>
+          <item name="android:textColorHint">@color/green</item>
+          <item name="android:textCursorDrawable">@color/green</item>
+    </style>
+</resources>

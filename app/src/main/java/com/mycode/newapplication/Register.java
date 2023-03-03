@@ -4,33 +4,31 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.mycode.newapplication.databinding.ActivityRegisterBinding;
+
 public class Register extends AppCompatActivity {
-    EditText name,email,pass,confirm;
-    Button register,back;
+    private ActivityRegisterBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
-        name=findViewById(R.id.name);
-        email=findViewById(R.id.mail);
-        pass=findViewById(R.id.password);
-        register=findViewById(R.id.signup);
-        back=findViewById(R.id.back);
+        binding=ActivityRegisterBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        ActionBar actionBar=getSupportActionBar();
+        actionBar.hide();
 
-        register.setOnClickListener(new View.OnClickListener() {
+        binding.registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Creating User Entity
                 User user=new User();
-                user.setName(name.getText().toString());
-                user.setEmail(email.getText().toString());
-                user.setPassword(pass.getText().toString());
+                user.setName(binding.name.getText().toString());
+                user.setEmail(binding.mail.getText().toString());
+                user.setPassword(binding.password.getText().toString());
                 UserDatabase user_db=UserDatabase.getUserDatabase(getApplicationContext());
                 final UserDao userDao=user_db.userDao();
 
@@ -52,18 +50,28 @@ public class Register extends AppCompatActivity {
 
 //                        }
 //                    }).start();
-                }else if(!Patterns.EMAIL_ADDRESS.matcher(email.getText().toString()).matches()){
+                }else if(!Patterns.EMAIL_ADDRESS.matcher(binding.mail.getText().toString()).matches()){
                     Toast.makeText(getApplicationContext(),"Invalid e-mail",Toast.LENGTH_SHORT).show();
                 }else{
                     userDao.registerUser(user);
                     Toast.makeText(Register.this, "User registered successfully!", Toast.LENGTH_SHORT).show();
+                    Intent i=new Intent(getApplicationContext(),Login.class);
+                    startActivity(i);
                 }
             }
         });
-        back.setOnClickListener(new View.OnClickListener() {
+        binding.backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getApplicationContext(),HomeStart1.class);
+                startActivity(i);
+            }
+        });
+
+        binding.footer2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(getApplicationContext(),Login.class);
                 startActivity(i);
             }
         });
